@@ -1,0 +1,62 @@
+<manifest>
+  <remote fetch="https://github.com/nanopb" name="nanopb"/>
+  <remote fetch="https://github.com/seL4" name="upstream-seL4"/>
+  <remote fetch="https://github.com/sel4proj" name="upstream-sel4proj"/>
+  <remote fetch="https://github.com/Jesse-Millwood" name="jesse-github"/>
+
+  <default remote="upstream-seL4" revision="master"/>
+
+  <project name="seL4.git"
+           path="kernel"
+           revision="fc251b5067aa6737409d326b0e7c68e24f286ab7"/>
+  <project name="musllibc.git"
+           path="projects/musllibc"
+           revision="1aaf321083bd4b9c14413a1a82dbd496f5108a1b"/>
+  <project name="seL4_libs.git"
+           path="projects/seL4_libs"
+           revision="d2af53182cfd9c62ce409dfbac75b00a25cc4e68"/>
+  <project name="seL4_tools.git"
+           path="tools/seL4"
+           revision="644c8466ee78f7917e4108a2050d2d6c263718fe">
+    <linkfile dest="CMakeLists.txt"
+              src="cmake-tool/default-CMakeLists.txt"/>
+    <linkfile dest="init-build.sh"
+              src="cmake-tool/init-build.sh"/>
+    <linkfile dest="griddle"
+              src="cmake-tool/griddle"/>
+  </project>
+  <project name="sel4_projects_libs"
+           path="projects/sel4_projects_libs"
+           remote="upstream-sel4proj"
+           revision="4fe6bdfc8654358636a098b973d2fd03eca90001"/>
+  <project name="sel4runtime.git"
+           path="projects/sel4runtime"
+           revision="2bd3ae65aa8a5a951bfd56d699837930a6c05c4d"
+           remote="upstream-sel4proj"/>
+  <project name="util_libs.git"
+           path="projects/util_libs"
+           revision="ffbc57f187a3dafeb840c899e87b0236ba5574ec"/>
+  <project name="nanopb"
+           remote="nanopb"
+           revision="847ac296b50936a8b13d1434080cef8edeba621c"/>
+  <project name="riscv-pk"
+           path="tools/riscv-pk"
+           remote="upstream-sel4proj"
+           revision="d3293c7c23e923338318f3860b2f20dd0b51a016"
+           upstream="fix-32bit"/>
+  <project name="CMakeRust"
+           path="tools/CMakeRust"
+           remote="jesse-github"
+           revision=""/>
+
+  <!-- Main Project -->
+  <project name="sel4RustApp"
+           path="projects/sel4rustapp"
+           remote="jesse-github">
+    <linkfile dest="easy-settings.cmake"
+              src="easy-settings.cmake"/>
+    <linkfile dest="settings.cmake"
+              src="settings.cmake"/>
+  </project>
+
+</manifest>
