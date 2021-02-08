@@ -57,7 +57,7 @@
   <project name="CMakeRust"
            path="tools/CMakeRust"
            remote="jesse-github"
-           revision="fix-cargo-build-dir"/>
+           revision="fix-target-arch"/>
 
   <!-- Main Project -->
   <project name="sel4RustApp"
